@@ -50,6 +50,12 @@ async function run() {
             const result = await eventtasks.deleteOne(query)
             res.send(result)
         })
+
+        app.post('/service', async (req, res) => {
+            const query = req?.body
+            const service = await db.insertOne(query)
+            res.send(service)
+        })
     }
     finally {
 
